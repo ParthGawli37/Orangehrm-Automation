@@ -2369,3 +2369,267 @@
 2026-06-07 12:25:15 [main] INFO  tests.ExcelDrivenRunner - Closing Browser
 2026-06-07 12:25:16 [main] INFO  tests.ExcelDrivenRunner - Browser Closed Successfully
 2026-06-07 12:25:16 [main] INFO  tests.ExcelDrivenRunner - =========================================
+2026-06-07 15:10:07 [main] INFO  tests.ExcelDrivenRunner - =========================================
+2026-06-07 15:10:07 [main] INFO  tests.ExcelDrivenRunner - Starting Test Execution
+2026-06-07 15:10:07 [main] INFO  tests.ExcelDrivenRunner - Browser : chrome
+2026-06-07 15:10:07 [main] INFO  tests.ExcelDrivenRunner - Framework Mode : excel
+2026-06-07 15:10:12 [main] INFO  tests.ExcelDrivenRunner - Application URL Loaded : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-06-07 15:10:12 [main] INFO  tests.ExcelDrivenRunner - Execution Priority : 
+2026-06-07 15:10:12 [main] INFO  tests.ExcelDrivenRunner - =========================================
+2026-06-07 15:10:13 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:10:13 [main] INFO  tests.ExcelDrivenRunner - STARTING EXCEL EXECUTION
+2026-06-07 15:10:13 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:10:13 [main] INFO  tests.ExcelDrivenRunner - Executable Scenarios : 1
+2026-06-07 15:10:13 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LGOUT-005
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - TS-LGOUT-005 PASSED
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - 
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - EXCEL EXECUTION SUMMARY
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - Workbook Scenarios      : 40
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - Selected By Priority    : 1
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - Automated Mapped        : 1
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - Not Implemented         : 0
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - Passed                  : 1
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - Failed                  : 0
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - Execution Time (sec)    : 5
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - Coverage (Selected)     : 100.00%
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - Coverage (Workbook)     : 2.50%
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - 
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - PASSED SCENARIOS
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - TS-LGOUT-005
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - 
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - FAILED SCENARIOS
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - None
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - 
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - NOT IMPLEMENTED SCENARIOS
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - None
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - Closing Browser
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - Browser Closed Successfully
+2026-06-07 15:10:18 [main] INFO  tests.ExcelDrivenRunner - =========================================
+2026-06-07 15:15:18 [main] INFO  tests.ExcelDrivenRunner - =========================================
+2026-06-07 15:15:18 [main] INFO  tests.ExcelDrivenRunner - Starting Test Execution
+2026-06-07 15:15:18 [main] INFO  tests.ExcelDrivenRunner - Browser : chrome
+2026-06-07 15:15:18 [main] INFO  tests.ExcelDrivenRunner - Framework Mode : excel
+2026-06-07 15:15:22 [main] INFO  tests.ExcelDrivenRunner - Application URL Loaded : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-06-07 15:15:22 [main] INFO  tests.ExcelDrivenRunner - Execution Priority : 
+2026-06-07 15:15:22 [main] INFO  tests.ExcelDrivenRunner - =========================================
+2026-06-07 15:15:23 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:15:23 [main] INFO  tests.ExcelDrivenRunner - STARTING EXCEL EXECUTION
+2026-06-07 15:15:23 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:15:23 [main] INFO  tests.ExcelDrivenRunner - Executable Scenarios : 1
+2026-06-07 15:15:23 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LGOUT-005
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - TS-LGOUT-005 PASSED
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - 
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - EXCEL EXECUTION SUMMARY
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - Workbook Scenarios      : 40
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - Selected By Priority    : 1
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - Automated Mapped        : 1
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - Not Implemented         : 0
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - Passed                  : 1
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - Failed                  : 0
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - Execution Time (sec)    : 5
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - Coverage (Selected)     : 100.00%
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - Coverage (Workbook)     : 2.50%
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - 
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - PASSED SCENARIOS
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - TS-LGOUT-005
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - 
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - FAILED SCENARIOS
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - None
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - 
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - NOT IMPLEMENTED SCENARIOS
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - None
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - Closing Browser
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - Browser Closed Successfully
+2026-06-07 15:15:28 [main] INFO  tests.ExcelDrivenRunner - =========================================
+2026-06-07 17:02:06 [main] INFO  tests.ExcelDrivenRunner - =========================================
+2026-06-07 17:02:06 [main] INFO  tests.ExcelDrivenRunner - Starting Test Execution
+2026-06-07 17:02:06 [main] INFO  tests.ExcelDrivenRunner - Browser : chrome
+2026-06-07 17:02:06 [main] INFO  tests.ExcelDrivenRunner - Framework Mode : excel
+2026-06-07 17:02:10 [main] INFO  tests.ExcelDrivenRunner - Application URL Loaded : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-06-07 17:02:10 [main] INFO  tests.ExcelDrivenRunner - Execution Priority : Low
+2026-06-07 17:02:10 [main] INFO  tests.ExcelDrivenRunner - =========================================
+2026-06-07 17:02:11 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:02:11 [main] INFO  tests.ExcelDrivenRunner - STARTING EXCEL EXECUTION
+2026-06-07 17:02:11 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:02:11 [main] INFO  tests.ExcelDrivenRunner - Executable Scenarios : 40
+2026-06-07 17:02:11 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LOGIN-001
+2026-06-07 17:02:12 [main] INFO  tests.ExcelDrivenRunner - TS-LOGIN-001 PASSED
+2026-06-07 17:02:13 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LOGIN-002
+2026-06-07 17:03:00 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LOGIN-003
+2026-06-07 17:03:48 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LOGIN-004
+2026-06-07 17:04:56 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LOGIN-005
+2026-06-07 17:05:43 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-DASH-001
+2026-06-07 17:06:30 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-DASH-002
+2026-06-07 17:07:16 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-DASH-003
+2026-06-07 17:08:03 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-DASH-004
+2026-06-07 17:08:50 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-DASH-005
+2026-06-07 17:09:37 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-ADMIN-001
+2026-06-07 17:10:24 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-ADMIN-002
+2026-06-07 17:11:10 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-ADMIN-003
+2026-06-07 17:11:57 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-ADMIN-004
+2026-06-07 17:12:44 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-ADMIN-005
+2026-06-07 17:12:44 [main] INFO  tests.ExcelDrivenRunner - TS-ADMIN-005 PASSED
+2026-06-07 17:12:44 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-PIM-001
+2026-06-07 17:13:30 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-PIM-002
+2026-06-07 17:14:17 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-PIM-003
+2026-06-07 17:15:03 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-PIM-004
+2026-06-07 17:15:50 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-PIM-005
+2026-06-07 17:16:37 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LEAVE-001
+2026-06-07 17:17:23 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LEAVE-002
+2026-06-07 17:18:10 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LEAVE-003
+2026-06-07 17:18:57 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LEAVE-004
+2026-06-07 17:19:45 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LEAVE-005
+2026-06-07 17:20:32 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-REC-001
+2026-06-07 17:21:19 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-REC-002
+2026-06-07 17:22:06 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-REC-003
+2026-06-07 17:22:52 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-REC-004
+2026-06-07 17:23:39 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-REC-005
+2026-06-07 17:24:26 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-DIR-001
+2026-06-07 17:25:12 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-DIR-002
+2026-06-07 17:25:59 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-DIR-003
+2026-06-07 17:26:45 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-DIR-004
+2026-06-07 17:27:32 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-DIR-005
+2026-06-07 17:28:19 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LGOUT-001
+2026-06-07 17:29:05 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LGOUT-002
+2026-06-07 17:29:53 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LGOUT-003
+2026-06-07 17:30:40 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LGOUT-004
+2026-06-07 17:30:45 [main] INFO  tests.ExcelDrivenRunner - TS-LGOUT-004 PASSED
+2026-06-07 17:30:45 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LGOUT-005
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-LGOUT-005 PASSED
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - 
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - EXCEL EXECUTION SUMMARY
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - Workbook Scenarios      : 40
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - Selected By Priority    : 40
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - Automated Mapped        : 40
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - Not Implemented         : 0
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - Passed                  : 4
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - Failed                  : 36
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - Execution Time (sec)    : 1718
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - Coverage (Selected)     : 100.00%
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - Coverage (Workbook)     : 100.00%
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - 
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - PASSED SCENARIOS
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-LOGIN-001
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-ADMIN-005
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-LGOUT-004
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-LGOUT-005
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - 
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - FAILED SCENARIOS
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-LOGIN-002
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-LOGIN-003
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-LOGIN-004
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-LOGIN-005
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-DASH-001
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-DASH-002
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-DASH-003
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-DASH-004
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-DASH-005
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-ADMIN-001
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-ADMIN-002
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-ADMIN-003
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-ADMIN-004
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-PIM-001
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-PIM-002
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-PIM-003
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-PIM-004
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-PIM-005
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-LEAVE-001
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-LEAVE-002
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-LEAVE-003
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-LEAVE-004
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-LEAVE-005
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-REC-001
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-REC-002
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-REC-003
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-REC-004
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-REC-005
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-DIR-001
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-DIR-002
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-DIR-003
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-DIR-004
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-DIR-005
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-LGOUT-001
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-LGOUT-002
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - TS-LGOUT-003
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - 
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - NOT IMPLEMENTED SCENARIOS
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - None
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - Closing Browser
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - Browser Closed Successfully
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - =========================================
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - =========================================
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - Starting Test Execution
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - Browser : chrome
+2026-06-07 17:30:49 [main] INFO  tests.ExcelDrivenRunner - Framework Mode : excel
+2026-06-07 17:30:52 [main] INFO  tests.ExcelDrivenRunner - Application URL Loaded : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-06-07 17:30:52 [main] INFO  tests.ExcelDrivenRunner - Execution Priority : Low
+2026-06-07 17:30:52 [main] INFO  tests.ExcelDrivenRunner - =========================================
+2026-06-07 17:30:53 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:30:53 [main] INFO  tests.ExcelDrivenRunner - STARTING EXCEL EXECUTION
+2026-06-07 17:30:53 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:30:53 [main] INFO  tests.ExcelDrivenRunner - Executable Scenarios : 40
+2026-06-07 17:30:53 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LOGIN-001
+2026-06-07 17:30:54 [main] INFO  tests.ExcelDrivenRunner - TS-LOGIN-001 PASSED
+2026-06-07 17:30:55 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LOGIN-002
+2026-06-07 17:31:42 [main] INFO  tests.ExcelDrivenRunner - Executing Scenario : TS-LOGIN-003
+2026-06-07 17:32:22 [main] ERROR tests.ExcelDrivenRunner - DRIVER SESSION LOST AFTER SCENARIO : TS-LOGIN-003
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - 
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - EXCEL EXECUTION SUMMARY
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - Workbook Scenarios      : 40
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - Selected By Priority    : 40
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - Automated Mapped        : 3
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - Not Implemented         : 0
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - Passed                  : 1
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - Failed                  : 2
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - Execution Time (sec)    : 89
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - Coverage (Selected)     : 7.50%
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - Coverage (Workbook)     : 7.50%
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - 
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - PASSED SCENARIOS
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - TS-LOGIN-001
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - 
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - FAILED SCENARIOS
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - TS-LOGIN-002
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - TS-LOGIN-003
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - 
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - NOT IMPLEMENTED SCENARIOS
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - ========================================
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - None
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - Closing Browser
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - Browser Closed Successfully
+2026-06-07 17:32:22 [main] INFO  tests.ExcelDrivenRunner - =========================================
