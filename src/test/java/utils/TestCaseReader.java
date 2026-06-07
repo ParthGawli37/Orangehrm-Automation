@@ -32,6 +32,11 @@ public class TestCaseReader {
                         "execution.priority"
                 );
 
+        String configuredScenario =
+                ConfigReader.getProperty(
+                        "execution.scenario"
+                );
+
         int rowCount =
                 excel.getRowCount();
 
@@ -39,10 +44,23 @@ public class TestCaseReader {
 
             String scenarioId =
                     excel.getCellData(row, 0);
-            
 
             String priority =
                     excel.getCellData(row, 3);
+
+            if (configuredScenario != null
+                    && !configuredScenario.trim().isEmpty()) {
+
+                if (scenarioId.equalsIgnoreCase(
+                        configuredScenario.trim())) {
+
+                    executableScenarios.add(
+                            scenarioId
+                    );
+                }
+
+                continue;
+            }
 
             if (PriorityUtil.shouldExecute(
                     priority,

@@ -3,6 +3,7 @@ package components;
 import base.DriverFactory;
 import pages.LoginPage;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import utils.ConfigReader;
 import utils.ElementActions;
+import utils.WaitUtil;
 
 public class LeftMenuComponent {
 
@@ -27,8 +29,8 @@ public class LeftMenuComponent {
     @FindBy(xpath = "//span[text()='Admin']")
     private WebElement adminMenu;
 
-    @FindBy(xpath = "//span[text()='PIM']")
-    private WebElement pimMenu;
+    private final By pimMenu =
+            By.xpath("//span[text()='PIM']");
 
     @FindBy(xpath = "//span[text()='Leave']")
     private WebElement leaveMenu;
@@ -48,14 +50,14 @@ public class LeftMenuComponent {
     private void hoverAndClick(
             WebElement element) {
 
-        Actions actions =
-                new Actions(
-                        DriverFactory.getDriver()
-                );
+        try {
 
-        actions.moveToElement(
-                element
-        ).perform();
+            Thread.sleep(3000);
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
 
         ElementActions.click(
                 element
@@ -95,9 +97,9 @@ public class LeftMenuComponent {
 
     public void navigateToPIM() {
 
-        hoverAndClick(
+        WaitUtil.waitForClickable(
                 pimMenu
-        );
+        ).click();
     }
 
     public void navigateToLeave() {

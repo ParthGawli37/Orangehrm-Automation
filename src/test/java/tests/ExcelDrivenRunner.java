@@ -101,29 +101,37 @@ public class ExcelDrivenRunner extends BaseTest {
                         scenarioId
                 );
 
-                logger.error(
-                        "{} FAILED",
-                        scenarioId,
-                        e
+                System.out.println(
+                        "================================="
                 );
 
-                try {
+                System.out.println(
+                        "FAILED SCENARIO : "
+                                + scenarioId
+                );
 
-                    DriverFactory.getDriver()
-                            .getCurrentUrl();
+                e.printStackTrace();
 
-                } catch (Exception driverException) {
+                System.out.println(
+                        "================================="
+                );
+            }
 
-                    logger.error(
-                            "DRIVER SESSION LOST AFTER SCENARIO : {}",
-                            scenarioId
-                    );
+            try {
 
-                    break;
-                }
+                DriverFactory.getDriver()
+                        .getCurrentUrl();
+
+            } catch (Exception driverException) {
+
+                logger.error(
+                        "DRIVER SESSION LOST AFTER SCENARIO : {}",
+                        scenarioId
+                );
+
+                break;
             }
         }
-
         LocalDateTime endTime =
                 LocalDateTime.now();
 

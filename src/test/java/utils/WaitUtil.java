@@ -232,4 +232,14 @@ public class WaitUtil {
                     .interrupt();
         }
     }
+    
+    public static WebElement waitForClickable(
+            By locator) {
+
+        return getWait().until(
+                ExpectedConditions.elementToBeClickable(
+                        locator
+                )
+        );
+    }
 }
