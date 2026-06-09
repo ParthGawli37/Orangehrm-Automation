@@ -28,6 +28,10 @@ public class TestListener implements ITestListener {
 		test.set(extentTest);
 
 		test.get().info("Test Started");
+
+		test.get().info("Environment : " + ConfigReader.getEnvironment().toUpperCase());
+
+		test.get().info("Browser : " + ConfigReader.getBrowser());
 	}
 
 	@Override
@@ -44,33 +48,22 @@ public class TestListener implements ITestListener {
 	}
 
 	@Override
-	public void onTestFailure(
-	        ITestResult result) {
+	public void onTestFailure(ITestResult result) {
 
-	    System.out.println(
-	            "FAILURE MANAGER RECORDING FAILURE"
-	    );
+		System.out.println("FAILURE MANAGER RECORDING FAILURE");
 
-	    failedCount++;
+		failedCount++;
 
-	    FailureManager.recordFailure();
+		FailureManager.recordFailure();
 
-	    test.get().fail(
-	            result.getThrowable()
-	    );
+		test.get().fail(result.getThrowable());
 
-	    System.out.println(
-	            "SCREENSHOT ON FAIL = "
-	                    + ConfigReader.isScreenshotOnFail()
-	    );
+		System.out.println("SCREENSHOT ON FAIL = " + ConfigReader.isScreenshotOnFail());
 
-	    if (ConfigReader.isScreenshotOnFail()) {
+		if (ConfigReader.isScreenshotOnFail()) {
 
-	        attachScreenshot(
-	                result,
-	                "FAIL"
-	        );
-	    }
+			attachScreenshot(result, "FAIL");
+		}
 	}
 
 	@Override
@@ -89,93 +82,61 @@ public class TestListener implements ITestListener {
 		extent.flush();
 	}
 
-	private void attachScreenshot(
-	        ITestResult result,
-	        String status) {
+	private void attachScreenshot(ITestResult result, String status) {
 
-	    try {
+		try {
 
-	        System.out.println(
-	                "ATTACH SCREENSHOT CALLED"
-	        );
+			System.out.println("ATTACH SCREENSHOT CALLED");
 
-	        String screenshotPath =
-	        		
-	                ScreenshotUtil.captureScreenshot(
-	                		
-	                        result.getMethod()
-	                                .getMethodName()
-	                                + "_"
-	                                + status
-	                );
+			String screenshotPath =
 
-	        System.out.println(
-	                "SCREENSHOT PATH = "
-	                        + screenshotPath
-	        );
+					ScreenshotUtil.captureScreenshot(
 
-	        test.get()
-	                .addScreenCaptureFromPath(
-	                        screenshotPath
-	                );
+							result.getMethod().getMethodName() + "_" + status);
 
-	        System.out.println(
-	                "SCREENSHOT ATTACHED TO EXTENT"
-	        );
+			System.out.println("SCREENSHOT PATH = " + screenshotPath);
 
-	    } catch (Exception e) {
+			test.get().addScreenCaptureFromPath(screenshotPath);
 
-	        System.out.println(
-	                "SCREENSHOT ATTACHMENT FAILED"
-	        );
+			System.out.println("SCREENSHOT ATTACHED TO EXTENT");
 
-	        e.printStackTrace();
+		} catch (Exception e) {
 
-	        test.get().warning(
-	                "Screenshot could not be attached."
-	        );
-	    }
+			System.out.println("SCREENSHOT ATTACHMENT FAILED");
+
+			e.printStackTrace();
+
+			test.get().warning("Screenshot could not be attached.");
+		}
 	}
 
 	private void testSummary(ITestContext context) {
 
-	    System.out.println();
-	    System.out.println("========================================");
-	    System.out.println("CUCUMBER EXECUTION SUMMARY");
-	    System.out.println("========================================");
+		System.out.println();
+		System.out.println("========================================");
+		System.out.println("CUCUMBER EXECUTION SUMMARY");
+		System.out.println("========================================");
 
-	    System.out.printf("%-25s %s%n",
-	            "Suite :",
-	            context.getSuite().getName());
+		System.out.printf("%-25s %s%n", "Suite :", context.getSuite().getName());
 
-	    System.out.printf("%-25s %s%n",
-	            "Browser :",
-	            ConfigReader.getBrowser());
+		System.out.printf("%-25s %s%n", "Browser :", ConfigReader.getBrowser());
 
-	    System.out.printf("%-25s %s%n",
-	            "Framework Mode :",
-	            ConfigReader.getFrameworkMode());
+		System.out.printf("%-25s %s%n", "Framework Mode :", ConfigReader.getFrameworkMode());
 
-	    System.out.printf("%-25s %d%n",
-	            "Passed :",
-	            passedCount);
+		System.out.printf("%-25s %s%n", "Environment :", ConfigReader.getEnvironment().toUpperCase());
 
-	    System.out.printf("%-25s %d%n",
-	            "Failed :",
-	            failedCount);
+		System.out.printf("%-25s %s%n", "Application URL :", ConfigReader.getApplicationUrl());
 
-	    System.out.printf("%-25s %d%n",
-	            "Skipped :",
-	            skippedCount);
+		System.out.printf("%-25s %d%n", "Passed :", passedCount);
 
-	    System.out.printf("%-25s %d%n",
-	            "Total :",
-	            (passedCount + failedCount + skippedCount));
+		System.out.printf("%-25s %d%n", "Failed :", failedCount);
 
-	    System.out.printf("%-25s %d%n",
-	            "Failure Threshold :",
-	            ConfigReader.getFailureThreshold());
+		System.out.printf("%-25s %d%n", "Skipped :", skippedCount);
 
-	    System.out.println("========================================");
+		System.out.printf("%-25s %d%n", "Total :", (passedCount + failedCount + skippedCount));
+
+		System.out.printf("%-25s %d%n", "Failure Threshold :", ConfigReader.getFailureThreshold());
+
+		System.out.println("========================================");
 	}
 }

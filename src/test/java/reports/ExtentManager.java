@@ -3,6 +3,8 @@ package reports;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
+import utils.ConfigReader;
+
 public class ExtentManager {
 
 	private static ExtentReports extentReports;
@@ -31,6 +33,14 @@ public class ExtentManager {
 			extentReports.setSystemInfo("Framework", "Selenium + TestNG");
 
 			extentReports.setSystemInfo("Tester", "Parth");
+
+			extentReports.setSystemInfo("Environment", ConfigReader.getEnvironment().toUpperCase());
+
+			extentReports.setSystemInfo("Browser", ConfigReader.getBrowser());
+
+			extentReports.setSystemInfo("Execution Mode", ConfigReader.getFrameworkMode());
+
+			extentReports.setSystemInfo("Application URL", ConfigReader.getApplicationUrl());
 		}
 
 		return extentReports;

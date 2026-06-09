@@ -21,9 +21,7 @@ public abstract class BaseExecutor {
 //        driver.manage().deleteAllCookies();
 
         driver.get(
-                ConfigReader.getProperty(
-                        "app.url"
-                )
+                ConfigReader.getApplicationUrl()
         );
     }
 

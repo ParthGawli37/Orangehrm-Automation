@@ -3288,3 +3288,10 @@
 2026-06-09 13:58:17 [main] INFO  tests.ExcelDrivenRunner - Closing Browser
 2026-06-09 13:58:18 [main] INFO  tests.ExcelDrivenRunner - Browser Closed Successfully
 2026-06-09 13:58:18 [main] INFO  tests.ExcelDrivenRunner - =========================================
+2026-06-09 22:53:06 [main] INFO  steps.Hooks - ========================================
+2026-06-09 22:53:06 [main] INFO  steps.Hooks - EXECUTING ON ENVIRONMENT : PROD
+2026-06-09 22:53:06 [main] INFO  steps.Hooks - TARGET URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2026-06-09 22:53:06 [main] INFO  steps.Hooks - BROWSER : FIREFOX
+2026-06-09 22:53:06 [main] INFO  steps.Hooks - FRAMEWORK MODE : CUCUMBER
+2026-06-09 22:53:06 [main] INFO  steps.Hooks - FAILURE THRESHOLD : 1
+2026-06-09 22:53:06 [main] INFO  steps.Hooks - ========================================
