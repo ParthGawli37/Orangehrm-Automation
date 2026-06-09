@@ -8,153 +8,174 @@ import org.testng.ITestResult;
 import reports.ExtentManager;
 import utils.ConfigReader;
 import utils.ScreenshotUtil;
+import utils.FailureManager;
 
-public class TestListener
-        implements ITestListener {
+public class TestListener implements ITestListener {
 
-    private static final ExtentReports extent =
-            ExtentManager.getInstance();
+	private static final ExtentReports extent = ExtentManager.getInstance();
 
-    private static final ThreadLocal<ExtentTest> test =
-            new ThreadLocal<>();
+	private static final ThreadLocal<ExtentTest> test = new ThreadLocal<>();
 
-    private static int passedCount = 0;
-    private static int failedCount = 0;
-    private static int skippedCount = 0;
+	private static int passedCount = 0;
+	private static int failedCount = 0;
+	private static int skippedCount = 0;
 
-    @Override
-    public void onTestStart(
-            ITestResult result) {
+	@Override
+	public void onTestStart(ITestResult result) {
 
-        ExtentTest extentTest =
-                extent.createTest(
-                        result.getMethod()
-                                .getMethodName()
-                );
+		ExtentTest extentTest = extent.createTest(result.getMethod().getMethodName());
 
-        test.set(extentTest);
+		test.set(extentTest);
 
-        test.get().info(
-                "Test Started"
-        );
-    }
+		test.get().info("Test Started");
+	}
 
-    @Override
-    public void onTestSuccess(
-            ITestResult result) {
+	@Override
+	public void onTestSuccess(ITestResult result) {
 
-        passedCount++;
+		passedCount++;
 
-        test.get().pass(
-                "Test Passed"
-        );
+		test.get().pass("Test Passed");
 
-        if (ConfigReader.isScreenshotOnPass()) {
+		if (ConfigReader.isScreenshotOnPass()) {
 
-            attachScreenshot(
-                    result,
-                    "PASS"
-            );
-        }
-    }
+			attachScreenshot(result, "PASS");
+		}
+	}
 
-    @Override
-    public void onTestFailure(
-            ITestResult result) {
+	@Override
+	public void onTestFailure(
+	        ITestResult result) {
 
-        failedCount++;
+	    System.out.println(
+	            "FAILURE MANAGER RECORDING FAILURE"
+	    );
 
-        test.get().fail(
-                result.getThrowable()
-        );
+	    failedCount++;
 
-        if (ConfigReader.isScreenshotOnFail()) {
+	    FailureManager.recordFailure();
 
-            attachScreenshot(
-                    result,
-                    "FAIL"
-            );
-        }
-    }
+	    test.get().fail(
+	            result.getThrowable()
+	    );
 
-    @Override
-    public void onTestSkipped(
-            ITestResult result) {
+	    System.out.println(
+	            "SCREENSHOT ON FAIL = "
+	                    + ConfigReader.isScreenshotOnFail()
+	    );
 
-        skippedCount++;
+	    if (ConfigReader.isScreenshotOnFail()) {
 
-        test.get().skip(
-                "Test Skipped"
-        );
-    }
+	        attachScreenshot(
+	                result,
+	                "FAIL"
+	        );
+	    }
+	}
 
-    @Override
-    public void onFinish(
-            ITestContext context) {
+	@Override
+	public void onTestSkipped(ITestResult result) {
 
-        testSummary(context);
+		skippedCount++;
 
-        extent.flush();
-    }
+		test.get().skip("Test Skipped");
+	}
 
-    private void attachScreenshot(
-            ITestResult result,
-            String status) {
+	@Override
+	public void onFinish(ITestContext context) {
 
-        try {
+		testSummary(context);
 
-            String screenshotPath =
-                    ScreenshotUtil.captureScreenshot(
-                            result.getMethod()
-                                    .getMethodName()
-                                    + "_"
-                                    + status
-                    );
+		extent.flush();
+	}
 
-            test.get()
-                    .addScreenCaptureFromPath(
-                            screenshotPath
-                    );
+	private void attachScreenshot(
+	        ITestResult result,
+	        String status) {
 
-        } catch (Exception e) {
+	    try {
 
-            test.get().warning(
-                    "Screenshot could not be attached."
-            );
-        }
-    }
+	        System.out.println(
+	                "ATTACH SCREENSHOT CALLED"
+	        );
 
-    private void testSummary(
-            ITestContext context) {
+	        String screenshotPath =
+	        		
+	                ScreenshotUtil.captureScreenshot(
+	                		
+	                        result.getMethod()
+	                                .getMethodName()
+	                                + "_"
+	                                + status
+	                );
 
-        ExtentTest summary =
-                extent.createTest(
-                        "Execution Summary"
-                );
+	        System.out.println(
+	                "SCREENSHOT PATH = "
+	                        + screenshotPath
+	        );
 
-        summary.info(
-                "Passed : " + passedCount
-        );
+	        test.get()
+	                .addScreenCaptureFromPath(
+	                        screenshotPath
+	                );
 
-        summary.info(
-                "Failed : " + failedCount
-        );
+	        System.out.println(
+	                "SCREENSHOT ATTACHED TO EXTENT"
+	        );
 
-        summary.info(
-                "Skipped : " + skippedCount
-        );
+	    } catch (Exception e) {
 
-        summary.info(
-                "Total : "
-                        + (passedCount
-                        + failedCount
-                        + skippedCount)
-        );
+	        System.out.println(
+	                "SCREENSHOT ATTACHMENT FAILED"
+	        );
 
-        summary.info(
-                "Suite : "
-                        + context.getSuite()
-                                 .getName()
-        );
-    }
+	        e.printStackTrace();
+
+	        test.get().warning(
+	                "Screenshot could not be attached."
+	        );
+	    }
+	}
+
+	private void testSummary(ITestContext context) {
+
+	    System.out.println();
+	    System.out.println("========================================");
+	    System.out.println("CUCUMBER EXECUTION SUMMARY");
+	    System.out.println("========================================");
+
+	    System.out.printf("%-25s %s%n",
+	            "Suite :",
+	            context.getSuite().getName());
+
+	    System.out.printf("%-25s %s%n",
+	            "Browser :",
+	            ConfigReader.getBrowser());
+
+	    System.out.printf("%-25s %s%n",
+	            "Framework Mode :",
+	            ConfigReader.getFrameworkMode());
+
+	    System.out.printf("%-25s %d%n",
+	            "Passed :",
+	            passedCount);
+
+	    System.out.printf("%-25s %d%n",
+	            "Failed :",
+	            failedCount);
+
+	    System.out.printf("%-25s %d%n",
+	            "Skipped :",
+	            skippedCount);
+
+	    System.out.printf("%-25s %d%n",
+	            "Total :",
+	            (passedCount + failedCount + skippedCount));
+
+	    System.out.printf("%-25s %d%n",
+	            "Failure Threshold :",
+	            ConfigReader.getFailureThreshold());
+
+	    System.out.println("========================================");
+	}
 }

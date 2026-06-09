@@ -3,14 +3,20 @@
 
 <suite name="OrangeHRM Cucumber Suite">
 
-    <test name="Cucumber Tests">
+	<listeners>
 
-        <classes>
+		<listener class-name="listeners.TestListener" />
 
-            <class name="runners.TestRunner"/>
+	</listeners>
 
-        </classes>
+	<test name="Cucumber Tests">
 
-    </test>
+		<classes>
+
+			<class name="runners.TestRunner" />
+
+		</classes>
+
+	</test>
 
 </suite>

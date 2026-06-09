@@ -17,6 +17,15 @@ public class DashboardSteps {
                 DashboardExecutor.execute(
                         scenarioId
                 );
+        
+//        # Simulate a failure for testing the failure threshold mechanism  //
+//        
+        
+//        Assert.fail(
+//                "Cucumber Failure Threshold Test"
+//        );
+//        
+        
     }
 
     @Then("dashboard scenario should pass")
