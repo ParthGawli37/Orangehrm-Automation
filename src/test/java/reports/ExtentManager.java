@@ -5,52 +5,34 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ExtentManager {
 
-    private static ExtentReports extentReports;
+	private static ExtentReports extentReports;
 
-    private ExtentManager() {
-    }
+	private ExtentManager() {
+	}
 
-    public static ExtentReports getInstance() {
+	public static ExtentReports getInstance() {
 
-        if (extentReports == null) {
+		if (extentReports == null) {
 
-            String reportPath =
-                    System.getProperty("user.dir")
-                            + "/reports/extent/ExtentReport.html";
+			String reportPath = System.getProperty("user.dir") + "/reports/extent/ExtentReport.html";
 
-            ExtentSparkReporter sparkReporter =
-                    new ExtentSparkReporter(reportPath);
+			ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
 
-            sparkReporter.config().setDocumentTitle(
-                    "OrangeHRM Automation Report"
-            );
+			sparkReporter.config().setDocumentTitle("OrangeHRM Automation Report");
 
-            sparkReporter.config().setReportName(
-                    "OrangeHRM Test Execution Results"
-            );
+			sparkReporter.config().setReportName("OrangeHRM Test Execution Results");
 
-            extentReports = new ExtentReports();
+			extentReports = new ExtentReports();
 
-            extentReports.attachReporter(
-                    sparkReporter
-            );
+			extentReports.attachReporter(sparkReporter);
 
-            extentReports.setSystemInfo(
-                    "Project",
-                    "OrangeHRM Automation"
-            );
+			extentReports.setSystemInfo("Project", "OrangeHRM Automation");
 
-            extentReports.setSystemInfo(
-                    "Framework",
-                    "Selenium + TestNG"
-            );
+			extentReports.setSystemInfo("Framework", "Selenium + TestNG");
 
-            extentReports.setSystemInfo(
-                    "Tester",
-                    "Parth"
-            );
-        }
+			extentReports.setSystemInfo("Tester", "Parth");
+		}
 
-        return extentReports;
-    }
+		return extentReports;
+	}
 }

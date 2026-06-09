@@ -14,9 +14,17 @@ public class ScreenshotUtil {
 
     private ScreenshotUtil() {
     }
-
     public static String captureScreenshot(
             String testName) {
+
+        System.out.println(
+                "CAPTURING SCREENSHOT"
+        );
+
+        System.out.println(
+                "DRIVER INSTANCE = "
+                        + DriverFactory.getDriver()
+        );
 
         String timestamp =
                 LocalDateTime.now()
@@ -50,34 +58,45 @@ public class ScreenshotUtil {
                         + timestamp
                         + ".png";
 
-        File sourceFile =
-                ((TakesScreenshot)
-                        DriverFactory.getDriver())
-                        .getScreenshotAs(
-                                OutputType.FILE
-                        );
-
-        File destinationFile =
-                new File(
-                        screenshotPath
-                );
-
         try {
+
+            File sourceFile =
+                    ((TakesScreenshot)
+                            DriverFactory.getDriver())
+                            .getScreenshotAs(
+                                    OutputType.FILE
+                            );
+
+            File destinationFile =
+                    new File(
+                            screenshotPath
+                    );
 
             FileUtils.copyFile(
                     sourceFile,
                     destinationFile
             );
 
-        } catch (IOException e) {
+            System.out.println(
+                    "SCREENSHOT SAVED = "
+                            + screenshotPath
+            );
+
+            return screenshotPath;
+
+        } catch (Exception e) {
+
+            System.out.println(
+                    "SCREENSHOT CAPTURE FAILED"
+            );
+
+            e.printStackTrace();
 
             throw new RuntimeException(
                     "Failed to capture screenshot",
                     e
             );
         }
-
-        return screenshotPath;
     }
 
     public static String captureFailureScreenshot(

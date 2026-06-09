@@ -5,6 +5,8 @@ import base.DriverFactory;
 import executor.ScenarioExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import utils.FailureManager;
 import utils.TestCaseReader;
 
 import java.time.Duration;
@@ -15,259 +17,177 @@ import java.util.Set;
 
 public class ExcelDrivenRunner extends BaseTest {
 
-    @Test
-    public void executeScenariosFromExcel() {
+	@Test
+	public void executeScenariosFromExcel() {
 
-        LocalDateTime startTime =
-                LocalDateTime.now();
+		FailureManager.reset();
 
-        Set<String> scenarioIds =
-                TestCaseReader.getExecutableScenarioIds();
+		LocalDateTime startTime = LocalDateTime.now();
 
-        int totalWorkbookScenarios =
-                TestCaseReader.getTotalScenarioCount();
+		Set<String> scenarioIds = TestCaseReader.getExecutableScenarioIds();
 
-        int selectedScenarios =
-                scenarioIds.size();
+		int totalWorkbookScenarios = TestCaseReader.getTotalScenarioCount();
 
-        logger.info("========================================");
-        logger.info("STARTING EXCEL EXECUTION");
-        logger.info("========================================");
+		int selectedScenarios = scenarioIds.size();
 
-        logger.info(
-                "Executable Scenarios : {}",
-                selectedScenarios
-        );
+		logger.info("========================================");
+		logger.info("STARTING EXCEL EXECUTION");
+		logger.info("========================================");
 
-        int passed = 0;
-        int failed = 0;
-        int notImplemented = 0;
+		logger.info("Executable Scenarios : {}", selectedScenarios);
 
-        List<String> passedScenarioIds =
-                new ArrayList<>();
+		int passed = 0;
+		int failed = 0;
+		int notImplemented = 0;
 
-        List<String> failedScenarioIds =
-                new ArrayList<>();
+		List<String> passedScenarioIds = new ArrayList<>();
 
-        List<String> notImplementedScenarioIds =
-                new ArrayList<>();
+		List<String> failedScenarioIds = new ArrayList<>();
 
-        for (String scenarioId : scenarioIds) {
+		List<String> notImplementedScenarioIds = new ArrayList<>();
 
-            logger.info(
-                    "Executing Scenario : {}",
-                    scenarioId
-            );
+		for (String scenarioId : scenarioIds) {
+			if (FailureManager.shouldStopExecution()) {
 
-            try {
+				logger.error("FAILURE THRESHOLD REACHED : {}", FailureManager.getFailureCount());
 
-                boolean result =
-                        ScenarioExecutor.execute(
-                                scenarioId
-                        );
+				logger.error("STOPPING EXCEL EXECUTION");
 
-                if (result) {
+				break;
+			}
 
-                    passed++;
+			logger.info("Executing Scenario : {}", scenarioId);
 
-                    passedScenarioIds.add(
-                            scenarioId
-                    );
+			try {
 
-                    logger.info(
-                            "{} PASSED",
-                            scenarioId
-                    );
+				boolean result = ScenarioExecutor.execute(scenarioId);
 
-                } else {
+				if (result) {
 
-                    notImplemented++;
+					passed++;
 
-                    notImplementedScenarioIds.add(
-                            scenarioId
-                    );
+					passedScenarioIds.add(scenarioId);
 
-                    logger.warn(
-                            "{} NOT_IMPLEMENTED",
-                            scenarioId
-                    );
-                }
+					logger.info("{} PASSED", scenarioId);
 
-            } catch (Exception e) {
+				} else {
 
-                failed++;
+					notImplemented++;
 
-                failedScenarioIds.add(
-                        scenarioId
-                );
+					notImplementedScenarioIds.add(scenarioId);
 
-                System.out.println(
-                        "================================="
-                );
+					logger.warn("{} NOT_IMPLEMENTED", scenarioId);
+				}
 
-                System.out.println(
-                        "FAILED SCENARIO : "
-                                + scenarioId
-                );
-
-                e.printStackTrace();
-
-                System.out.println(
-                        "================================="
-                );
-            }
-
-            try {
-
-                DriverFactory.getDriver()
-                        .getCurrentUrl();
-
-            } catch (Exception driverException) {
-
-                logger.error(
-                        "DRIVER SESSION LOST AFTER SCENARIO : {}",
-                        scenarioId
-                );
-
-                break;
-            }
-        }
-        LocalDateTime endTime =
-                LocalDateTime.now();
-
-        long executionSeconds =
-                Duration.between(
-                        startTime,
-                        endTime
-                ).toSeconds();
-
-        int automatedScenarios =
-                passed + failed;
-
-        double selectedCoverage =
-                selectedScenarios == 0
-                        ? 0
-                        : ((double) automatedScenarios
-                        / selectedScenarios) * 100;
-
-        double workbookCoverage =
-                totalWorkbookScenarios == 0
-                        ? 0
-                        : ((double) automatedScenarios
-                        / totalWorkbookScenarios) * 100;
-
-        logger.info("");
-        logger.info("========================================");
-        logger.info("EXCEL EXECUTION SUMMARY");
-        logger.info("========================================");
-
-        logger.info(
-                "Workbook Scenarios      : {}",
-                totalWorkbookScenarios
-        );
-
-        logger.info(
-                "Selected By Priority    : {}",
-                selectedScenarios
-        );
-
-        logger.info(
-                "Automated Mapped        : {}",
-                automatedScenarios
-        );
-
-        logger.info(
-                "Not Implemented         : {}",
-                notImplemented
-        );
-
-        logger.info(
-                "Passed                  : {}",
-                passed
-        );
-
-        logger.info(
-                "Failed                  : {}",
-                failed
-        );
-
-        logger.info(
-                "Execution Time (sec)    : {}",
-                executionSeconds
-        );
-
-        logger.info(
-                "Coverage (Selected)     : {}%",
-                String.format(
-                        "%.2f",
-                        selectedCoverage
-                )
-        );
-
-        logger.info(
-                "Coverage (Workbook)     : {}%",
-                String.format(
-                        "%.2f",
-                        workbookCoverage
-                )
-        );
-
-        logger.info("========================================");
-
-        logger.info("");
-        logger.info("========================================");
-        logger.info("PASSED SCENARIOS");
-        logger.info("========================================");
-
-        if (passedScenarioIds.isEmpty()) {
-
-            logger.info("None");
-
-        } else {
-
-            passedScenarioIds.forEach(
-                    id -> logger.info(id)
-            );
-        }
-
-        logger.info("");
-        logger.info("========================================");
-        logger.info("FAILED SCENARIOS");
-        logger.info("========================================");
-
-        if (failedScenarioIds.isEmpty()) {
-
-            logger.info("None");
-
-        } else {
-
-            failedScenarioIds.forEach(
-                    id -> logger.info(id)
-            );
-        }
-
-        logger.info("");
-        logger.info("========================================");
-        logger.info("NOT IMPLEMENTED SCENARIOS");
-        logger.info("========================================");
-
-        if (notImplementedScenarioIds.isEmpty()) {
-
-            logger.info("None");
-
-        } else {
-
-            notImplementedScenarioIds.forEach(
-                    id -> logger.info(id)
-            );
-        }
-
-        if (failed > 0) {
-
-            Assert.fail(
-                    failed
-                    + " scenario(s) failed. Check execution logs."
-            );
-        }
-    }
+			} catch (Exception e) {
+
+				failed++;
+
+				FailureManager.recordFailure();
+
+				failedScenarioIds.add(scenarioId);
+
+				System.out.println("=================================");
+
+				System.out.println("FAILED SCENARIO : " + scenarioId);
+
+				e.printStackTrace();
+
+				System.out.println("=================================");
+			}
+
+			try {
+
+				DriverFactory.getDriver().getCurrentUrl();
+
+			} catch (Exception driverException) {
+
+				logger.error("DRIVER SESSION LOST AFTER SCENARIO : {}", scenarioId);
+
+				break;
+			}
+		}
+		LocalDateTime endTime = LocalDateTime.now();
+
+		long executionSeconds = Duration.between(startTime, endTime).toSeconds();
+
+		int automatedScenarios = passed + failed;
+
+		double selectedCoverage = selectedScenarios == 0 ? 0 : ((double) automatedScenarios / selectedScenarios) * 100;
+
+		double workbookCoverage = totalWorkbookScenarios == 0 ? 0
+				: ((double) automatedScenarios / totalWorkbookScenarios) * 100;
+
+		logger.info("");
+		logger.info("========================================");
+		logger.info("EXCEL EXECUTION SUMMARY");
+		logger.info("========================================");
+
+		logger.info("Workbook Scenarios      : {}", totalWorkbookScenarios);
+
+		logger.info("Selected By Priority    : {}", selectedScenarios);
+
+		logger.info("Automated Mapped        : {}", automatedScenarios);
+
+		logger.info("Not Implemented         : {}", notImplemented);
+
+		logger.info("Passed                  : {}", passed);
+
+		logger.info("Failed                  : {}", failed);
+
+		logger.info("Execution Time (sec)    : {}", executionSeconds);
+
+		logger.info("Coverage (Selected)     : {}%", String.format("%.2f", selectedCoverage));
+
+		logger.info("Coverage (Workbook)     : {}%", String.format("%.2f", workbookCoverage));
+
+		logger.info("========================================");
+
+		logger.info("");
+		logger.info("========================================");
+		logger.info("PASSED SCENARIOS");
+		logger.info("========================================");
+
+		if (passedScenarioIds.isEmpty()) {
+
+			logger.info("None");
+
+		} else {
+
+			passedScenarioIds.forEach(id -> logger.info(id));
+		}
+
+		logger.info("");
+		logger.info("========================================");
+		logger.info("FAILED SCENARIOS");
+		logger.info("========================================");
+
+		if (failedScenarioIds.isEmpty()) {
+
+			logger.info("None");
+
+		} else {
+
+			failedScenarioIds.forEach(id -> logger.info(id));
+		}
+
+		logger.info("");
+		logger.info("========================================");
+		logger.info("NOT IMPLEMENTED SCENARIOS");
+		logger.info("========================================");
+
+		if (notImplementedScenarioIds.isEmpty()) {
+
+			logger.info("None");
+
+		} else {
+
+			notImplementedScenarioIds.forEach(id -> logger.info(id));
+		}
+
+		if (failed > 0) {
+
+			Assert.fail(failed + " scenario(s) failed. Check execution logs.");
+		}
+	}
 }

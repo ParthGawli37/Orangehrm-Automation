@@ -6,215 +6,183 @@ import java.util.Properties;
 
 public class ConfigReader {
 
-    private static final Properties properties =
-            new Properties();
+	private static final Properties properties = new Properties();
 
-    static {
+	static {
 
-        try {
+		try {
 
-            FileInputStream file =
-                    new FileInputStream(
-                            System.getProperty("user.dir")
-                                    + "/src/test/resources/config/config.properties"
-                    );
+			FileInputStream file = new FileInputStream(
+					System.getProperty("user.dir") + "/src/test/resources/config/config.properties");
 
-            properties.load(file);
+			properties.load(file);
 
-            file.close();
+			file.close();
 
-        } catch (IOException e) {
+		} catch (IOException e) {
 
-            throw new RuntimeException(
-                    "Failed to load config.properties file",
-                    e
-            );
-        }
-    }
+			throw new RuntimeException("Failed to load config.properties file", e);
+		}
+	}
 
-    private ConfigReader() {
-    }
+	private ConfigReader() {
+	}
 
-    // ==========================
-    // Generic Getter
-    // ==========================
+	// ==========================
+	// Generic Getter
+	// ==========================
 
-    public static String getProperty(
-            String key) {
+	public static String getProperty(String key) {
 
-        return properties.getProperty(key);
-    }
+		return properties.getProperty(key);
+	}
 
-    // ==========================
-    // String Getters
-    // ==========================
+	// ==========================
+	// String Getters
+	// ==========================
 
-    public static String getBrowser() {
+	public static String getBrowser() {
 
-        return getProperty("browser");
-    }
+		return getProperty("browser");
+	}
 
-    public static String getApplicationUrl() {
+	public static String getApplicationUrl() {
 
-        return getProperty("app.url");
-    }
+		String environment = getEnvironment();
 
-    public static String getUsername() {
+		return getProperty(environment + ".url");
+	}
 
-        return getProperty("username");
-    }
+	public static String getUsername() {
 
-    public static String getPassword() {
+		return getProperty("username");
+	}
 
-        return getProperty("password");
-    }
+	public static String getPassword() {
 
-    public static String getExecutionPriority() {
+		return getProperty("password");
+	}
 
-        return getProperty("execution.priority");
-    }
+	public static String getExecutionPriority() {
 
-    public static String getFrameworkMode() {
+		return getProperty("execution.priority");
+	}
 
-        return getProperty("framework.mode");
-    }
+	public static String getFrameworkMode() {
 
-    public static String getTestDataFile() {
+		return getProperty("framework.mode");
+	}
 
-        return getProperty("testdata.file");
-    }
+	public static String getTestDataFile() {
 
-    // ==========================
-    // Integer Getters
-    // ==========================
+		return getProperty("testdata.file");
+	}
 
-    public static int getImplicitWait() {
+	public static String getEnvironment() {
 
-        return Integer.parseInt(
-                getProperty("implicit.wait")
-        );
-    }
+		return getProperty("environment");
+	}
 
-    public static int getExplicitWait() {
+	// ==========================
+	// Integer Getters
+	// ==========================
 
-        return Integer.parseInt(
-                getProperty("explicit.wait")
-        );
-    }
+	public static int getImplicitWait() {
 
-    public static int getPageLoadTimeout() {
+		return Integer.parseInt(getProperty("implicit.wait"));
+	}
 
-        return Integer.parseInt(
-                getProperty("page.load.timeout")
-        );
-    }
+	public static int getExplicitWait() {
 
-    public static int getRetryCount() {
+		return Integer.parseInt(getProperty("explicit.wait"));
+	}
 
-        return Integer.parseInt(
-                getProperty("retry.count")
-        );
-    }
+	public static int getPageLoadTimeout() {
 
-    public static int getRetryWaitSeconds() {
+		return Integer.parseInt(getProperty("page.load.timeout"));
+	}
 
-        return Integer.parseInt(
-                getProperty("retry.wait.seconds")
-        );
-    }
+	public static int getRetryCount() {
 
-    public static int getMaxWaitRetry() {
+		return Integer.parseInt(getProperty("retry.count"));
+	}
 
-        return Integer.parseInt(
-                getProperty("max.wait.retry")
-        );
-    }
+	public static int getRetryWaitSeconds() {
 
-    public static int getPollingIntervalMillis() {
+		return Integer.parseInt(getProperty("retry.wait.seconds"));
+	}
 
-        return Integer.parseInt(
-                getProperty("polling.interval.millis")
-        );
-    }
+	public static int getMaxWaitRetry() {
 
-    public static int getStaleElementRetryCount() {
+		return Integer.parseInt(getProperty("max.wait.retry"));
+	}
 
-        return Integer.parseInt(
-                getProperty("stale.element.retry.count")
-        );
-    }
+	public static int getPollingIntervalMillis() {
 
-    // ==========================
-    // Boolean Getters
-    // ==========================
+		return Integer.parseInt(getProperty("polling.interval.millis"));
+	}
 
-    public static boolean isHeadless() {
+	public static int getFailureThreshold() {
 
-        return Boolean.parseBoolean(
-                getProperty("headless")
-        );
-    }
+		return Integer.parseInt(getProperty("execution.failure.threshold"));
+	}
 
-    public static boolean isScreenshotOnPass() {
+	public static int getStaleElementRetryCount() {
 
-        return Boolean.parseBoolean(
-                getProperty("screenshot.on.pass")
-        );
-    }
+		return Integer.parseInt(getProperty("stale.element.retry.count"));
+	}
 
-    public static boolean isScreenshotOnFail() {
+	// ==========================
+	// Boolean Getters
+	// ==========================
 
-        return Boolean.parseBoolean(
-                getProperty("screenshot.on.fail")
-        );
-    }
+	public static boolean isHeadless() {
 
-    public static boolean isScreenshotOnRetry() {
+		return Boolean.parseBoolean(getProperty("headless"));
+	}
 
-        return Boolean.parseBoolean(
-                getProperty("screenshot.on.retry")
-        );
-    }
+	public static boolean isScreenshotOnPass() {
 
-    public static boolean isRetryOnlyOnFailure() {
+		return Boolean.parseBoolean(getProperty("screenshot.on.pass"));
+	}
 
-        return Boolean.parseBoolean(
-                getProperty("retry.only.on.failure")
-        );
-    }
+	public static boolean isScreenshotOnFail() {
 
-    public static boolean isRetryLoggingEnabled() {
+		return Boolean.parseBoolean(getProperty("screenshot.on.fail"));
+	}
 
-        return Boolean.parseBoolean(
-                getProperty("retry.log.attempts")
-        );
-    }
+	public static boolean isScreenshotOnRetry() {
 
-    public static boolean isWaitForVisibilityEnabled() {
+		return Boolean.parseBoolean(getProperty("screenshot.on.retry"));
+	}
 
-        return Boolean.parseBoolean(
-                getProperty("wait.for.visibility")
-        );
-    }
+	public static boolean isRetryOnlyOnFailure() {
 
-    public static boolean isWaitForClickableEnabled() {
+		return Boolean.parseBoolean(getProperty("retry.only.on.failure"));
+	}
 
-        return Boolean.parseBoolean(
-                getProperty("wait.for.clickable")
-        );
-    }
+	public static boolean isRetryLoggingEnabled() {
 
-    public static boolean isWaitForPageReadyEnabled() {
+		return Boolean.parseBoolean(getProperty("retry.log.attempts"));
+	}
 
-        return Boolean.parseBoolean(
-                getProperty("wait.for.page.ready")
-        );
-    }
+	public static boolean isWaitForVisibilityEnabled() {
 
-    public static boolean isWaitForAjaxEnabled() {
+		return Boolean.parseBoolean(getProperty("wait.for.visibility"));
+	}
 
-        return Boolean.parseBoolean(
-                getProperty("wait.for.ajax.complete")
-        );
-    }
+	public static boolean isWaitForClickableEnabled() {
+
+		return Boolean.parseBoolean(getProperty("wait.for.clickable"));
+	}
+
+	public static boolean isWaitForPageReadyEnabled() {
+
+		return Boolean.parseBoolean(getProperty("wait.for.page.ready"));
+	}
+
+	public static boolean isWaitForAjaxEnabled() {
+
+		return Boolean.parseBoolean(getProperty("wait.for.ajax.complete"));
+	}
 }
