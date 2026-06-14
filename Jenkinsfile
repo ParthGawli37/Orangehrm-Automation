@@ -85,7 +85,7 @@ stages {
             dir('FakeStoreAPI') {
 
                 git(
-                    url: 'YOUR_FAKESTORE_GITHUB_URL',
+                    url: 'https://github.com/ParthGawli37/FakeStore-API-Automation.git',
                     branch: 'main'
                 )
             }
