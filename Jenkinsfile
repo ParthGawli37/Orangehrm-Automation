@@ -1,6 +1,5 @@
 pipeline {
 
-```
 agent any
 
 parameters {
@@ -129,6 +128,5 @@ post {
         echo 'Pipeline execution failed.'
     }
 }
-```
 
 }
